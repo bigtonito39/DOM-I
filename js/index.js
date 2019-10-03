@@ -81,12 +81,12 @@ const pTopContent = ['Features content elementum magna eros, ac posuere elvit te
 h4Content.forEach(h4 => {
     let htag = document.querySelector('.top-content h4');
     htag.textContent = h4;
-    topContent.prepend(htag);
+    topContent.append(htag);
 })
 pTopContent.forEach(p => {
     let ptag = document.querySelector('p');
     ptag.textContent = p;
-    topContent.append(ptag);
+    topContent.appendChild(ptag);
 });
 topContent.style.justifyContent = 'space-around';
 
@@ -102,8 +102,8 @@ bottomContent.forEach(h4 => {
     hdtag.textContent = h4;
     lowerSection.append(hdtag);
 });
-bottomContent.forEach(p4 => {
-    let hdtag = document.querySelector("p");
+pBottomContent.forEach(p4 => {
+    let hdtag = document.querySelector(".bottom-content p");
     hdtag.textContent = p4;
     lowerSection.append(hdtag);
 });
