@@ -62,7 +62,48 @@ const ctaImage = document.querySelector('#cta-img');
 ctaImage.src = 'img/header-img.png';
 ctaImage.alt = "Image of a code snippet.";
 
-//button:
+//h1:
 
-const upperSection = document.querySelector('.cta h1');
-upperSection.textContent = 'DOM   is  Awesome';
+const upperSectionH1 = document.querySelector('.cta h1');
+upperSectionH1.textContent = 'DOM is Awesome';
+
+//button
+const upperSectionbutton = document.querySelector('.cta button');
+upperSectionbutton.textContent = 'Get Started';
+
+//top-middle content
+const topContent = document.querySelector('.top-content');
+const h4Content = ["Features", "About", ];
+const pTopContent = ['Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
+    'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
+
+]
+h4Content.forEach(h4 => {
+    let htag = document.querySelector('.top-content h4');
+    htag.textContent = h4;
+    topContent.prepend(htag);
+})
+pTopContent.forEach(p => {
+    let ptag = document.querySelector('p');
+    ptag.textContent = p;
+    topContent.append(ptag);
+});
+topContent.style.justifyContent = 'space-around';
+
+//lower middle content
+const lowerSection = document.querySelector('.bottom-content');
+const bottomContent = ["Services", "Product", "Vision"];
+const pBottomContent = ['Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
+    'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
+    'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
+]
+bottomContent.forEach(h4 => {
+    let hdtag = document.querySelector(".bottom-content h4");
+    hdtag.textContent = h4;
+    lowerSection.append(hdtag);
+});
+bottomContent.forEach(p4 => {
+    let hdtag = document.querySelector("p");
+    hdtag.textContent = p4;
+    lowerSection.append(hdtag);
+});
