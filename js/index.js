@@ -95,6 +95,13 @@ linebreakH1.innerHTML = "DOM <br/> Is <br/> Awesome";
 //button
 const upperSectionbutton = document.querySelector('.cta button');
 upperSectionbutton.textContent = 'Get Started';
+//strech added:
+upperSectionbutton.addEventListener("click", (e) => {
+    ctaImage.style.display = "none";
+    alert("Thanks for clicking the button and making this ugly circle image disapear!")
+
+})
+
 
 //top-middle content
 const topcontentP = document.querySelectorAll('.top-content p');
