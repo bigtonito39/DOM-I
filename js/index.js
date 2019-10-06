@@ -41,16 +41,39 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 //header nav:
-const nav = document.querySelector('nav');
+/*
 let navArray = ["Services", "Product", "Vision", "Features", "About", "Contact"];
 navArray.forEach(anchord => {
     let aTag = document.querySelector('a');
     aTag.textContent = anchord;
     nav.append(aTag);
 
-});
+});*/
+const nav = document.querySelector('nav');
+delete siteContent["nav"]["img-src"];
 
+function navigator() {
+    for (let [key, value] of Object.entries(siteContent["nav"])) {
+
+        let Atag = document.querySelector('header nav a');
+        Atag.textContent = value;
+        nav.append(Atag);
+        Atag.style.color = "green";
+
+    };
+}
+navigator();
+const newnav = document.createElement("a");
+newnav.textContent = "Home Page";
+const newernav = document.createElement("a");
+newernav.textContent = "Go to last page";
+nav.appendChild(newernav);
 nav.style.justifyContent = 'space-between';
+newnav.style.color = "green";
+newernav.style.color = "green";
+newnav.setAttribute('href', "index.html");
+nav.prepend(newnav);
+newernav.setAttribute("href", "#");
 
 //images: 
 
@@ -65,45 +88,61 @@ ctaImage.alt = "Image of a code snippet.";
 //h1:
 
 const upperSectionH1 = document.querySelector('.cta h1');
-upperSectionH1.textContent = 'DOM is Awesome';
+upperSectionH1.textContent = siteContent["cta"]["h1"];
+const linebreakH1 = document.querySelector('.cta h1');
+linebreakH1.innerHTML = "DOM <br/> Is <br/> Awesome";
 
 //button
 const upperSectionbutton = document.querySelector('.cta button');
 upperSectionbutton.textContent = 'Get Started';
 
 //top-middle content
-const topContent = document.querySelector('.top-content');
-const h4Content = ["Features", "About", ];
-const pTopContent = ['Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-    'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
+const topcontentP = document.querySelectorAll('.top-content p');
 
-]
-h4Content.forEach(h4 => {
-    let htag = document.querySelector('.top-content h4');
-    htag.textContent = h4;
-    topContent.append(htag);
-})
-pTopContent.forEach(p => {
-    let ptag = document.querySelector('p');
-    ptag.textContent = p;
-    topContent.appendChild(ptag);
-});
-topContent.style.justifyContent = 'space-around';
+
+
+topcontentP[0].textContent = siteContent["main-content"]["features-content"];
+topcontentP[1].textContent = siteContent["main-content"]["about-content"];
+
+const topcontentH4 = document.querySelectorAll('.top-content h4');
+
+
+topcontentH4[0].textContent = siteContent["main-content"]["features-h4"];
+topcontentH4[1].textContent = siteContent["main-content"]["about-h4"];
 
 //lower middle content
-const lowerSection = document.querySelector('.bottom-content');
-const bottomContent = ["Services", "Product", "Vision"];
-const pBottomContent = ['Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-    'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.',
-    'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
-]
-bottomContent.forEach(h4 => {
-    let hdtag = document.querySelector(".bottom-content h4");
-    hdtag.textContent = h4;
-    lowerSection.append(hdtag);
-});
-pBottomContent.forEach(p4 => {
-    let hdtag = document.querySelector(".bottom-content p");
-    hdtag.textContent = p4;
-    lowerSection.append(hdtag);
-});
+
+const middleLowerSec = document.querySelectorAll('.bottom-content h4');
+
+middleLowerSec[0].textContent = siteContent["main-content"]["services-h4"];
+middleLowerSec[1].textContent = siteContent["main-content"]["product-h4"];
+middleLowerSec[2].textContent = siteContent["main-content"]["vision-h4"];
+
+const middleLowerSecp = document.querySelectorAll('.bottom-content P');
+
+middleLowerSecp[0].textContent = siteContent["main-content"]["services-content"];
+middleLowerSecp[1].textContent = siteContent["main-content"]["product-content"];
+middleLowerSecp[2].textContent = siteContent["main-content"]["vision-content"];
+
+
+
+//Contact:
+const contact = document.querySelector('.contact');
+const contactArray = ['123 Way 456 Street', 'Somewhere  USA', '1 (888) 888-8888', 'sales@greatidea.io']
+
+
+const contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = "Contact";
+const newP = document.createElement('p');
+contact.appendChild(newP);
+
+contactArray.forEach((p => {
+    let ptag = document.querySelector('.contact p');
+    ptag.textContent = p;
+    contact.append(ptag);
+}))
+
+//footer: 
+
+const footerP = document.querySelector("footer p");
+footerP.textContent = "Copyright Great Idea! 2018";
